@@ -45,28 +45,22 @@ public class PigLatin {
         //postcondition: returns the pig latin equivalent of sWord
         // more code should go here
 	    boolean allConsts = true;
-  for (int i = 0; i <sWord.length()-1; i++) {
-    if (sWord.substring(i, i+1).equals("a") == false && sWord.substring(i, i+1).equals("e") == false &&
-      sWord.substring(i, i+1).equals("i") == false && sWord.substring(i, i+1).equals("o") == false &&
-      sWord.substring(i, i+1).equals("u") == false) {
-        allConsts = true; 
-    }
+  if (sWord.substring(0, 2).equals("qu")) {
+    return (sWord.substring(2, sWord.length()) + "quay");
   }
-  if (allConsts == true){
-    return sWord + "ay";
+  else if (findFirstVowel(sWord) == 0){
+    return (sWord + "way");
   }
-    if (sWord.substring(0,2).equals("qu")){
-      return (sWord.substring(2, sWord.length()) + sWord.substring(0,2) + "ay");
-    }
-    else if (findFirstVowel(sWord) == -1)
-    {
-      return (sWord.substring(1, sWord.length()) + sWord.substring(0, 1) + "ay");
-    } 
-    else if (findFirstVowel(sWord) != -1){
-      return (sWord + "way");
-    }
-    else {
-      return "ERROR!";
-    }
+  else if (findFirstVowel(sWord) != -1)
+  {
+    return (sWord.substring(1, sWord.length()) + sWord.substring(0, 1) + "ay");
+  }
+  else if (findFirstVowel(sWord) == -1) {
+    return (sWord + "ay");
+  }
+  
+  else {
+    return "ERROR!";
+  }
     }
 }//end PigLatin class

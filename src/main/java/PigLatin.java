@@ -31,7 +31,7 @@ public class PigLatin {
         //precondition: sWord is a valid String of length greater than 0.
         //postcondition: returns the position of the first vowel in sWord.  If there are no vowels, returns -1
 	    // your code goes here
-        if (sWord.substring(0, 2).equals("qu")) {
+          if (sWord.substring(0, 2).equals("qu")) {
     return (sWord.substring(2, sWord.length()) + "quay");
   }
   else if (findFirstVowel(sWord) == 0){

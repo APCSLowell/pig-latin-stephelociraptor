@@ -22,9 +22,9 @@ public class PigLatin {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
-	    return ("There are " + lines.length + " lines");
+	    System.out.println ("There are " + lines.length + " lines");
 	    for (int i = 0 ; i < lines.length; i++) {
-	        return (pigLatin(lines[i]));
+	        System.out.println (pigLatin(lines[i]));
 	    }
     }
     public int findFirstVowel(String sWord)
